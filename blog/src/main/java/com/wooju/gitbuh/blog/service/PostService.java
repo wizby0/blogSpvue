@@ -1,4 +1,4 @@
-package com.wooju.github.blog.service;
+package com.wooju.gitbuh.blog.service;
 
 
 import com.wooju.github.blog.entities.Post;

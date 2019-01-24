@@ -1,4 +1,4 @@
-package com.wooju.github.blog.entities;
+package com.wooju.gitbuh.blog;
 
 
 import javax.persistence.Entity;
@@ -17,6 +17,7 @@ public class Post {
     private String title;
     private String body;
     private Date dateCreated;
+
 
     public Post() {
     }

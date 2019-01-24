@@ -1,11 +1,10 @@
-package com.wooju.github.blog.controller;
+package com.wooju.gitbuh.blog.controller;
 
 import com.wooju.github.blog.entities.Post;
 import com.wooju.github.blog.service.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -19,7 +18,6 @@ public class BlogController {
 
     @Autowired
     private PostService postService;
-
 
     @GetMapping(value = "/")
     public String index(){
