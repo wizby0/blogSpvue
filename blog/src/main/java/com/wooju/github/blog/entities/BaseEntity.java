@@ -1,4 +1,4 @@
-package com.wooju.gitbuh.blog;
+package com.wooju.github.blog.entities;
 
 
 import lombok.Getter;

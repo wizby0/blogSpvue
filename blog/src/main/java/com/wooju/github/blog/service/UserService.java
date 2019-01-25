@@ -1,4 +1,4 @@
-package com.wooju.gitbuh.blog.service;
+package com.wooju.github.blog.service;
 
 
 
@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
+@Service("userDetailsService")
 public class UserService {
 
     @Autowired

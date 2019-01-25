@@ -1,8 +1,11 @@
-package com.wooju.gitbuh.blog.controller;
+package com.wooju.github.blog.controller;
 
+import com.wooju.github.blog.config.CustomUserDetails;
 import com.wooju.github.blog.entities.Post;
 import com.wooju.github.blog.service.PostService;
+import com.wooju.github.blog.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -19,6 +22,10 @@ public class BlogController {
     @Autowired
     private PostService postService;
 
+    @Autowired
+    private UserService userService;
+
+
     @GetMapping(value = "/")
     public String index(){
         return "index";
@@ -31,9 +38,12 @@ public class BlogController {
 
 
     @PostMapping(value = "/post")
-    public void publishPost(@RequestBody Post post){
+    public String publishPost(@RequestBody Post post){
+        CustomUserDetails userDetails = (CustomUserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         if(post.getDateCreated() == null)
             post.setDateCreated(new Date());
+        post.setCreator(userService.getUser(userDetails.getUsername()));
         postService.insert(post);
+        return "Post was published";
     }
 }

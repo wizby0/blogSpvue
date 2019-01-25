@@ -1,4 +1,4 @@
-package com.wooju.gitbuh.blog;
+package com.wooju.github.blog.entities;
 
 import lombok.*;
 
@@ -10,7 +10,7 @@ import javax.persistence.Entity;
 @Getter
 @Setter
 @ToString
-public class Role extends BaseEntity{
+public class Role extends BaseEntity {
 
     private String name;
     

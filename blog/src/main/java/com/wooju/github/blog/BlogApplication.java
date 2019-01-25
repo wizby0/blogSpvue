@@ -1,10 +1,11 @@
 package com.wooju.github.blog;
 
 
-import com.wooju.gitbuh.blog.Role;
-import com.wooju.gitbuh.blog.User;
-import com.wooju.gitbuh.blog.repositories.UserRepository;
-import com.wooju.gitbuh.blog.service.UserService;
+import com.wooju.github.blog.config.CustomUserDetails;
+import com.wooju.github.blog.entities.Role;
+import com.wooju.github.blog.entities.User;
+import com.wooju.github.blog.repositories.UserRepository;
+import com.wooju.github.blog.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -21,7 +22,6 @@ public class BlogApplication {
 
     @Autowired
     private PasswordEncoder passwordEncoder;
-
 
     public static void main(String[] args) {
         SpringApplication.run(BlogApplication.class, args);
@@ -49,6 +49,4 @@ public class BlogApplication {
     private UserDetailsService userDetailsService(final UserRepository repository) {
         return username -> new CustomUserDetails(repository.findByUsername(username));
     }
-
 }
-

@@ -1,9 +1,10 @@
-package com.wooju.gitbuh.blog.config;
+package com.wooju.github.blog.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
 import org.springframework.security.oauth2.config.annotation.web.configuration.ResourceServerConfigurerAdapter;
+
 
 /**
  *The @EnableResourceServer annotation adds a filter of type OAuth2AuthenticationProcessingFilter automatically
@@ -22,7 +23,8 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
                 .and()
             .authorizeRequests()
                 .antMatchers("/","/home","/register","/login").permitAll()
-                .antMatchers("/private/**").authenticated();
+                .antMatchers("/private/**").authenticated()
+                .antMatchers("/post").authenticated();
     }
 
 

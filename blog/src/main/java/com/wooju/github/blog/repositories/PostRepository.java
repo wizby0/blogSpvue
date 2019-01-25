@@ -1,4 +1,4 @@
-package com.wooju.gitbuh.blog.repositories;
+package com.wooju.github.blog.repositories;
 
 import com.wooju.github.blog.entities.Post;
 import org.springframework.data.jpa.repository.JpaRepository;
